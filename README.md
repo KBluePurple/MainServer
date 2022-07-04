@@ -53,7 +53,14 @@ export default new class RPC {
 ```
 
 ```typescript
+import express from "express";
 import rpc from "./util/rpc";
+
+const app = express();
+
+app.get("/index", (res, req) => {
+    req.send("Hello World");
+});
 
 rpc.RegisterProxy("/index", 3001);
 ```
