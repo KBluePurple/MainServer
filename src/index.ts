@@ -2,6 +2,7 @@ import express from 'express';
 import proxy from './util/proxy';
 import { getLogger } from './util/logger';
 import rpc from './util/rpc';
+import 'dotenv/config'
 
 const logger = getLogger('Main');
 const app = express();
@@ -16,6 +17,6 @@ app.use('/', (req, res) => {
     res.status(404).send('404 Not Found');
 });
 
-app.listen(3000, () => {
-    logger.info('listening on port 3000');
+app.listen(process.env.PORT, () => {
+    logger.info('listening on port ${process.env.PORT}');
 });
