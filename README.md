@@ -56,11 +56,15 @@ export default new class RPC {
 import express from "express";
 import rpc from "./util/rpc";
 
+const port = 3001;
+
 const app = express();
 
 app.get("/index", (res, req) => {
     req.send("Hello World");
 });
-
-rpc.RegisterProxy("/index", 3001);
+app.listen(port, () => {
+    console.log(`Server started on port ${3001}`);
+    rpc.RegisterProxy("/index", port);
+});
 ```
