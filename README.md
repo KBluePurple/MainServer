@@ -1,4 +1,5 @@
-# MainServer
+그냥 nginx 쓰는게 좋다는 선생님의 말씀으로 사용하지 않는다
+# <s>MainServer</s>
 
 내가 필요해서 만든 `http-proxy`와 `express`, `jayson`을 이용한 메인 서버
 
